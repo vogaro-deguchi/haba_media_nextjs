@@ -1,7 +1,8 @@
 import styles from './style.module.scss'
 
-
 import Image from 'next/image'
+
+import RankingArticle from '@/components/Article/ranking-article'
 
 export default function Footer() {
   return (
@@ -30,28 +31,9 @@ export default function Footer() {
           height ={30}
         />
         <p className={styles.asideTitle}>人気記事ランキング</p>
-        <article className={styles.article}>
-          <a href="" className={styles.articleLink}>
-            <Image 
-              src="/assets/images/index/article_01.png"
-              alt=""
-              width ={100}
-              height ={100}
-            />
-            <p className={styles.articleTitle}>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
-          </a>
-        </article>
-        <article className={styles.article}>
-          <a href="" className={styles.articleLink}>
-            <Image 
-              src="/assets/images/index/article_01.png"
-              alt=""
-              width ={100}
-              height ={100}
-            />
-            <p className={styles.articleTitle}>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
-          </a>
-        </article>
+        <RankingArticle />
+        <RankingArticle />
+        <RankingArticle />
       </div>
     </aside>
   )

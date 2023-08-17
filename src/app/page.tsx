@@ -1,6 +1,6 @@
 import styles from './style.module.scss'
 
-import Article from '@/components/Article'
+import Article from '@/components/Article/article'
 
 export default function Home() {
   return (
