@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+// prerequisites
+@import "./abstracts/_functions";
+@import "./abstracts/_mixins";
+@import "./abstracts/_variables";
+
+// vendors
+// @import './vendors/';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// categorized rules
+@import "./utils/_class";
+@import "./utils/_clearfix";
+@import "./utils/_display";
+@import "./utils/_sr-only";
+@import "./base/_index";
+@import "./base/_reset";

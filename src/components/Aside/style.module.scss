@@ -1,0 +1,86 @@
+.aside {
+  min-width: 276px;
+  width: 276px;
+
+  .asideTitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+
+  .category {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .categoryList {
+      text-align: left;
+
+      a {
+        position: relative;
+        font-size: 15px;
+        font-weight: 500;
+        display: block;
+        padding: 15px;
+        border-bottom: solid 1px #dbdbd0;
+
+        &:after {
+          position: absolute;
+          display: inline-block;
+          content:'';
+          right: 20px;
+          top: 50%;
+          width: 8px;
+          height: 8px;
+          transform: translateY(-50%) rotate(45deg);
+          border-top: solid 2px #463d2e;
+          border-right: solid 2px #463d2e;
+          transition: transform .5s;
+        }
+
+        &:before {
+          position: absolute;
+          display: inline-block;
+          content:'';
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 0;
+          background-color: #463d2e;
+          transition: all .5s;
+        }
+
+        &:hover {
+          &:after {
+            transform: translateX(5px) translateY(-50%) rotate(45deg);
+          }
+          &:before {
+            width: 165px;
+          }
+        }
+      }
+    }
+  }
+
+  .ranking {
+    text-align: center;
+
+
+    .article {
+      padding: 20px 0;
+      border-bottom: solid 1px #dbdbd0;
+
+      .articleLink {
+        text-align: left;
+        display: flex;
+        gap: 15px;
+  
+        .articleTitle {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1.7;
+        }
+      }
+    }
+    
+  }
+}
