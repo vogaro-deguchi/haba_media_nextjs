@@ -6,7 +6,7 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-  // if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
+  if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
     const basicAuth = req.headers.get("authorization");
     const url = req.nextUrl;
     if (basicAuth) {
@@ -19,6 +19,6 @@ export function middleware(req: NextRequest) {
     }
     url.pathname = "/api/auth";
     return NextResponse.rewrite(url);
-  // }
-  // return NextResponse.next();
+  }
+  return NextResponse.next();
 }
