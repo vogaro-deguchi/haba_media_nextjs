@@ -20,7 +20,7 @@ export function middleware(req: NextRequest) {
         return NextResponse.next();
       }
     }
-    url.pathname = "/api/auth";
+    url.pathname = "/app/api/auth";
     return NextResponse.rewrite(url);
   }
   return NextResponse.next();
