@@ -1,24 +1,34 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
+/**
+ * @see https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+ */
 export const config = {
-  matcher: "/:path*",
+  matcher: ['/:path*', '/index/:path*'],
 };
 
 export function middleware(req: NextRequest) {
   if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
-    const basicAuth = req.headers.get("authorization");
-    const url = req.nextUrl;
-    if (basicAuth) {
-      const authValue = basicAuth.split(" ")[1];
-      const [user, pwd] = atob(authValue).split(":");
+    const basicAuth = req.headers.get('Authorization');
 
-      if (user === '4dmin' && pwd === 'testpwd123') {
+    if (basicAuth) {
+      const authValue = basicAuth.split(' ')[1];
+      // atob is deprecated but Buffer.from is not available in Next.js edge.
+      const [user, password] = atob(authValue).split(':');
+
+      if (user === '4dmin' && password === 'pwd123') {
         return NextResponse.next();
       }
+
+      return NextResponse.json(
+        { error: 'Invalid credentials' },
+        { headers: { 'WWW-Authenticate': 'Basic realm="Secure Area"' }, status: 401 }
+      );
+    } else {
+      return NextResponse.json(
+        { error: 'Please enter credentials' },
+        { headers: { 'WWW-Authenticate': 'Basic realm="Secure Area"' }, status: 401 }
+      );
     }
-    url.pathname = "/api/auth";
-    return NextResponse.rewrite(url);
   }
-  return NextResponse.next();
 }
