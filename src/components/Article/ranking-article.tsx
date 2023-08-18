@@ -3,7 +3,7 @@ import styles from './ranking-article.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function RankingArticle() {
+export default function RankingArticle(props: any): JSX.Element {
   return (
     <article className={styles.article}>
       <Link href="" className={styles.articleLink}>
@@ -13,7 +13,7 @@ export default function RankingArticle() {
           width ={100}
           height ={100}
         />
-        <p className={styles.articleTitle}>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        <p className={styles.articleTitle}>{props.title}</p>
       </Link>
     </article>
   )

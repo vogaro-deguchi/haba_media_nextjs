@@ -2,7 +2,7 @@ import styles from './style.module.scss'
 
 import Article from '@/components/Article/article'
 
-import articleData from '../../article.json'
+import articleData from '@/../article.json'
 
 type articleType = {
   userId: number;

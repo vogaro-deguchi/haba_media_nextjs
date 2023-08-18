@@ -4,6 +4,17 @@ import Image from 'next/image'
 
 import RankingArticle from '@/components/Article/ranking-article'
 
+import articleData from '@/../article.json'
+
+type articleType = {
+  userId: number;
+  id: number;
+  category: string;
+  title: string;
+  text: string;
+  tags: string[];
+}
+
 export default function Footer() {
   return (
     <aside className={styles.aside}>
@@ -31,9 +42,14 @@ export default function Footer() {
           height ={30}
         />
         <p className={styles.asideTitle}>人気記事ランキング</p>
-        <RankingArticle />
-        <RankingArticle />
-        <RankingArticle />
+        {articleData.map((data: articleType) => {
+          return (
+            <RankingArticle
+              key = {data.id}
+              {...data}
+            />
+          )
+        })}
       </div>
     </aside>
   )
