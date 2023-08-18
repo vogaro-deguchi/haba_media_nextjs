@@ -1,9 +1,10 @@
+
 import styles from './article.module.scss'
 
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Article() {
+export default function Article(props: any): JSX.Element {
   return (
     <article className={styles.article}>
       <Link href="" className={styles.articleLink}>
@@ -17,13 +18,15 @@ export default function Article() {
           />
         </div>
         <div className={styles.articleContent}>
-          <span className={styles.articleCategory}>商品コラム</span>
-          <h2 className={styles.articleTitle}>この文章はダミーです。文字の大きさ、量、時間、行間を確認するために入れています。</h2>
-          <p className={styles.articleText}>この文章はダミーです文字の大きさ、量、時間、行間を確認するために入れています。この文章はダミーです文字の大きさ、量、時間、行間を確認するために入れています。</p>
+          <span className={styles.articleCategory}>{props.category}</span>
+          <h2 className={styles.articleTitle}>{props.title}</h2>
+          <p className={styles.articleText}>{props.text}</p>
           <div className={styles.articleTagList}>
-            <Link className={styles.articleTag} href="">スキンケア</Link>
-            <Link className={styles.articleTag} href="">しわ</Link>
-            <Link className={styles.articleTag} href="">くすみ</Link>
+            {props.tags.map((tag: any) => {
+              return (
+                <Link className={styles.articleTag} href="" key={tag.id}>{tag}</Link>
+              )
+            })}
           </div>
         </div>
       </Link>
