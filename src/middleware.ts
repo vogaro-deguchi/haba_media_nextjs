@@ -16,7 +16,10 @@ export function middleware(req: NextRequest) {
       // atob is deprecated but Buffer.from is not available in Next.js edge.
       const [user, password] = atob(authValue).split(':');
 
-      if (user === '4dmin' && password === 'pwd123') {
+      if (
+        user === process.env.BASIC_USERNAME &&
+        password === process.env.BASIC_PASSWORD
+      ) {
         return NextResponse.next();
       }
 
