@@ -20,9 +20,7 @@ type articleType = {
 export default function Home() {
   return (
     <>
-      <Wrapper>
-        <Slider />
-      </Wrapper>
+      <Slider />
       <Wrapper>
         <section className={styles.secArticle}>
           {articleData.map((data: articleType) => {

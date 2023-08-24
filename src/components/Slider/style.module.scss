@@ -1,15 +1,6 @@
 .splide {
   margin-bottom: 100px;
-
-  .splideArrows {
-    .splideArrowsInner {
-      background-color: #fff;
-    }
-    
-    .splideArrowNext {
-      right: auto;
-    }
-  }
+  padding-left: calc((100vw - 1360px) / 2);
 
   .splideSlide {
     display: flex;
