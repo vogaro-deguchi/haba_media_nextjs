@@ -1,0 +1,66 @@
+.splide {
+  margin-bottom: 100px;
+
+  .splideArrows {
+    .splideArrowsInner {
+      background-color: #fff;
+    }
+    
+    .splideArrowNext {
+      right: auto;
+    }
+  }
+
+  .splideSlide {
+    display: flex;
+    max-width: 1004px;
+    gap: 50px;
+
+    .articleContent {
+      padding-top: 20px;
+      position: relative;
+      z-index: 1;
+  
+      .articleCategory {
+        background-color: #887c6d;
+        color: #fff;
+        font-size: 14px;
+        padding: 7px 20px;
+        border-radius: 2px;
+      }
+      
+      .articleTitle {
+        font-size: 24px;
+        letter-spacing: 0.05em;
+        line-height: 1.66;
+        font-weight: 500;
+        margin: 20px 0;
+      }
+      
+      .articleText {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+      
+      .articleTagList {
+        display: flex;
+        gap: 5px;
+    
+        .articleTag {
+          font-size: 12px;
+          padding: 3px 15px;
+          border: solid 1px #dbdbd0;
+          border-radius: 2px;
+          
+          &:before {
+            content: '#';
+          }
+          
+          &:hover {
+            border: solid 1px #463d2e;
+          }
+        }
+      }
+    }
+  }
+}
