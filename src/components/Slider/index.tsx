@@ -58,7 +58,8 @@ export default function Slider() {
                       alt=''
                       width={525}
                       height={525}
-                      objectFit="cover"
+                      sizes='(min-width: 767px) 525px, 100%'
+                      layout="responsive"
                     />
                   </div>
                 </SplideSlide>

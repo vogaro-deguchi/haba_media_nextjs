@@ -4,13 +4,28 @@
 
   .splideSlide {
     display: flex;
-    max-width: 1004px;
+    flex-direction: column-reverse;
     gap: 50px;
+    
+    @media screen and (min-width: 767px) {
+      flex-direction: row;
+      max-width: 1004px;
+    }
+
+    .articleImg {
+      display: block;
+      width: 280px;
+      
+      @media screen and (min-width: 767px) {
+        width: 525px;
+      }
+    }
 
     .articleContent {
       padding-top: 20px;
       position: relative;
       z-index: 1;
+      flex: 1;
   
       .articleCategory {
         background-color: #887c6d;

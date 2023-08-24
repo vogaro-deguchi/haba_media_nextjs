@@ -14,7 +14,7 @@ export default function Article(props: any): JSX.Element {
           alt=''
           width={360}
           height={360}
-          objectFit="cover"
+          layout="responsive"
         />
       </div>
       <div className={styles.articleContent}>

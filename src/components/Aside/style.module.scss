@@ -1,6 +1,10 @@
 .aside {
-  display: flex;
-  padding: 0 0 100px;
+  display: none;
+
+  @media screen and (min-width: 767px) {
+    display: flex;
+    padding: 0 0 100px;
+  }
   
   .asideInner {
     min-width: 276px;
