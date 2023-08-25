@@ -3,16 +3,21 @@
   
   .footerHead {
     display: flex;
-    height: 80px;
+    flex-direction: column;
+    height: 120px;
+    
+    @media screen and (min-width: 767px) {
+      flex-direction: row;
+      height: 80px;
+    }
 
     .online {
-      width: 50%;
+      flex: 1;
       background-color: #463d2e;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-
 
       .onlineLink {
         display: block;
@@ -20,7 +25,7 @@
     }
 
     .sns {
-      width: 50%;
+      flex: 1;
       text-align: center;
       display: flex;
       align-items: center;
@@ -35,9 +40,14 @@
 
     .pageList {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin-top: 60px;
-      gap: 40px;
+      gap: 20px;
+
+      @media screen and (min-width: 767px) {
+        gap: 40px;
+      }
 
       li {
         font-size: 14px;
@@ -50,6 +60,10 @@
     justify-content: center;
     align-items: center;
     border-top: solid 1px #dbdbd0;
-    font-size: 14px;
+    font-size: 10px;
+
+    @media screen and (min-width: 767px) {
+      font-size: 14px;
+    }
   }
 }

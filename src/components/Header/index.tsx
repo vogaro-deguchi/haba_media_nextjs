@@ -12,6 +12,8 @@ export default function Header() {
             alt="HABA MEDIA"
             width={555}
             height={64}
+            layout='responsive'
+            sizes='(min-width: 767px) 555px, 100%'
           />
         </span>
         <span className={styles.sub}>ダミータイトルが入ります。</span>
