@@ -1,6 +1,10 @@
 .splide {
   margin-bottom: 100px;
-  padding-left: calc((100vw - 1360px) / 2);
+  padding: 0 20px;
+  
+  @media screen and (min-width: 767px) {
+    padding-left: calc((100vw - 1360px) / 2);
+  }
 
   .splideSlide {
     display: flex;
@@ -67,6 +71,42 @@
           }
         }
       }
+    }
+  }
+
+  .splideArrowPrev,
+  .splideArrowNext {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    position: absolute;
+    opacity: 1;
+    left: auto;
+    right: 10px;
+    
+    @media screen and (min-width: 767px) {
+      width: 80px;
+      height: 80px;
+      left: calc(50% + 365px);
+      right: auto;
+    }
+  }
+  .splideArrowPrev {
+    border-radius: 0 0 40px 40px;
+    bottom: auto;
+    top: 22%;
+    
+    @media screen and (min-width: 767px) {
+      top: 50%;
+    }
+  }
+  .splideArrowNext {
+    border-radius: 40px 40px 0 0;
+    bottom: 78%;
+    top: auto;
+    
+    @media screen and (min-width: 767px) {
+      bottom: 50%;
     }
   }
 }

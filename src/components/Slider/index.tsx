@@ -30,9 +30,15 @@ export default function Slider() {
         options={{
           type : 'loop',
           autoplay: true,
-          interval: 3000,
+          interval: 5000,
+          speed: 2000,
           gap: 80,
-          pagination: false
+          pagination: false,
+          breakpoints: {
+            767: {
+              gap: 0,
+            },
+          }
         }}
       >
         <div className="custom-wrapper">
@@ -66,36 +72,14 @@ export default function Slider() {
               )
             })}
           </SplideTrack>
-          <div className="splide__arrows">
-            <div className="splide__arrows__inner">
-              <button className="splide__arrow splide__arrow--prev">Prev</button>
-              <button className="splide__arrow splide__arrow--next">Next</button>
+            <div className={`${styles.splideArrows} splide__arrows`}>
+              <div className={`${styles.splideArrowsInner} splide__arrows__inner`}>
+                <button className={`${styles.splideArrowPrev} splide__arrow splide__arrow--prev`}>Prev</button>
+                <button className={`${styles.splideArrowNext} splide__arrow splide__arrow--next`}>Next</button>
+              </div>
             </div>
-          </div>
         </div>
       </Splide>
-      <style jsx>{`
-        .splide__arrow {
-          width: 80px;
-          height: 80px;
-          left: calc(50% + 365px);
-          background: #fff;
-          opacity: 1;
-        }
-        .splide__arrows__inner {
-          background-color: #fff; 
-        }
-        .splide__arrow--prev {
-          border-radius: 0 0 40px 40px;
-          bottom: auto;
-          top: 50%;
-        }
-        .splide__arrow--next {
-          border-radius: 40px 40px 0 0;
-          bottom: 50%;
-          top: auto;
-        }
-      `}</style>
     </>
   )
 }
