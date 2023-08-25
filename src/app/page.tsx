@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import styles from './style.module.scss'
 
 import Article from '@/components/Article/article'
@@ -25,10 +27,13 @@ export default function Home() {
         <section className={styles.secArticle}>
           {articleData.map((data: articleType) => {
             return (
-              <Article 
-                key = {data.id}
-                {...data}
-              />
+              <article className={styles.article} key = {data.id} >
+                <Link href="" className={styles.articleLink}>
+                    <Article 
+                      {...data}
+                    />
+                </Link>
+              </article>
             )
           })}
         </section>

@@ -1,13 +1,11 @@
-
-import styles from './article.module.scss'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
+import styles from './article.module.scss'
+
 export default function Article(props: any): JSX.Element {
   return (
-    <article className={styles.article}>
-      <Link href="" className={styles.articleLink} />
+    <>
       <div className={styles.articleImg}>
         <Image
           src='/assets/images/index/article_01.png'
@@ -29,6 +27,6 @@ export default function Article(props: any): JSX.Element {
           })}
         </div>
       </div>
-    </article>
+    </>
   )
 }

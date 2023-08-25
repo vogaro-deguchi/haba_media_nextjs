@@ -1,101 +1,80 @@
-.article {
-  position: relative;
-  background-color: #fff;
-  width: 100%;
-  margin-bottom: 30px;
-  display: flex;
-  gap: 20px;
-  padding: 10px 20px 20px 10px;
-  
+
+.articleImg {
+  display: block;
+  width: 110px;
+
   @media screen and (min-width: 767px) {
-    gap: 50px;
-    padding: 20px 50px 20px 20px;
+    width: 360px;
+  }
+}
+
+.articleContent {
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+
+  @media screen and (min-width: 767px) {
+    padding-top: 20px;
+    max-width: 530px;
+  }
+
+  .articleCategory {
+    background-color: #887c6d;
+    color: #fff;
+    font-size: 10px;
+    padding: 7px 20px;
+    border-radius: 2px;
+    
+    @media screen and (min-width: 767px) {
+      font-size: 14px;
+    }
   }
   
-  .articleLink {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-
-  .articleImg {
-    display: block;
-    width: 110px;
-
+  .articleTitle {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1.66;
+    font-weight: 500;
+    margin: 10px 0;
+    
     @media screen and (min-width: 767px) {
-      width: 360px;
+      font-size: 24px;
+      margin: 20px 0;
     }
   }
-
-  .articleContent {
-    padding-top: 10px;
-    position: relative;
-    z-index: 1;
-    flex: 1;
-
+  
+  .articleText {
+    font-size: 10px;
+    margin-bottom: 15px;
+    
     @media screen and (min-width: 767px) {
-      padding-top: 20px;
-      max-width: 530px;
+      font-size: 14px;
+      margin-bottom: 30px;
     }
+  }
+  
+  .articleTagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 
-    .articleCategory {
-      background-color: #887c6d;
-      color: #fff;
+    .articleTag {
       font-size: 10px;
-      padding: 7px 20px;
+      padding: 3px 15px;
+      border: solid 1px #dbdbd0;
       border-radius: 2px;
       
       @media screen and (min-width: 767px) {
-        font-size: 14px;
+        font-size: 12px;
       }
-    }
-    
-    .articleTitle {
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      line-height: 1.66;
-      font-weight: 500;
-      margin: 10px 0;
       
-      @media screen and (min-width: 767px) {
-        font-size: 24px;
-        margin: 20px 0;
+      &:before {
+        content: '#';
       }
-    }
-    
-    .articleText {
-      font-size: 10px;
-      margin-bottom: 15px;
       
-      @media screen and (min-width: 767px) {
-        font-size: 14px;
-        margin-bottom: 30px;
-      }
-    }
-    
-    .articleTagList {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-  
-      .articleTag {
-        font-size: 10px;
-        padding: 3px 15px;
-        border: solid 1px #dbdbd0;
-        border-radius: 2px;
-        
-        @media screen and (min-width: 767px) {
-          font-size: 12px;
-        }
-        
-        &:before {
-          content: '#';
-        }
-        
-        &:hover {
-          border: solid 1px #463d2e;
-        }
+      &:hover {
+        border: solid 1px #463d2e;
       }
     }
   }
